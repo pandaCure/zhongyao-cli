@@ -11,7 +11,8 @@
     "eslint": "eslint --ext .js packages",
     "eslint:fix": "eslint --ext .js packages --fix",
     "prettier": "prettier -l packages/*",
-    "prettier:fix": "prettier --write -l packages/*"
+    "prettier:fix": "prettier --write -l packages/*",
+    "log": "lerna-changelog"
   },
   "repository": {
     "type": "git",
@@ -48,7 +49,8 @@
     "labels": {
       "feat": ":airplane: New Feature",
       "doc": ":computer: Documentation",
-      "fix": ":cherry_blossom: Fix Bug"
+      "fix": ":cherry_blossom: Fix Bug",
+      "init": ":beer: Start Poject"
     }
   },
   "husky": {

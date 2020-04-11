@@ -1,0 +1,72 @@
+{
+  "name": "zhongyao-cli",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "description": "一套cli",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint --ext .js packages",
+    "eslint:fix": "eslint --ext .js packages --fix",
+    "prettier": "prettier -l packages/*",
+    "prettier:fix": "prettier --write -l packages/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandaCure/zhongyao-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pandaCure/zhongyao-cli/issues"
+  },
+  "homepage": "https://github.com/pandaCure/zhongyao-cli#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-angular": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.0.4",
+    "cz-emoji": "^1.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-alloy": "^3.6.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^4.2.5",
+    "lerna": "^3.19.0",
+    "lerna-changelog": "^1.0.1",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4",
+    "typescript": "^3.8.3",
+    "vue-eslint-parser": "^7.0.0"
+  },
+  "changelog": {
+    "labels": {
+      "feat": ":airplane: New Feature",
+      "doc": ":computer: Documentation",
+      "fix": ":cherry_blossom: Fix Bug"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-emoji"
+    }
+  }
+}
